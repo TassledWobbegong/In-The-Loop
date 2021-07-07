@@ -4,7 +4,10 @@ const path = require('path');
 const config = require('./config');
 const routes = require('./routes');
 
-const { port } = config;
+console.log('config ', config)
+console.log('process.env ', process.env)
+
+const { PORT } = config;
 
 app.use(express.json());
 
@@ -39,7 +42,7 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 module.exports = {
   app,
