@@ -1,4 +1,8 @@
 const path = require('path');
+const webpack = require('webpack');
+const env = require('./dotenv')
+
+const { envKeys } = env
 
 module.exports = {
   entry: ['babel-polyfill', './client/index.js'],
@@ -33,6 +37,10 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
+  plugins: [
+    // envKeys to plugin
+    new webpack.DefinePlugin(env.envKeys)
+  ],
   devServer: {
     publicPath: '/build/',
     proxy: {
