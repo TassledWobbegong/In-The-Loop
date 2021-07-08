@@ -6,6 +6,10 @@ import FetchUserDetails from '../api/FetchUserDetails';
 const Profile = () => {
   // example to use env variables in React App
   console.log('SPOTIFY_CLIENT_ID ', process.env.SPOTIFY_CLIENT_ID)
+  
+  //destructring does not work
+  // const { spotifyClientId } = process.env.SPOTIFY_CLIENT_ID 
+
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const scope =
@@ -36,7 +40,7 @@ const Profile = () => {
           <Button
             onClick={() =>
               window.open(
-                `https://accounts.spotify.com/authorize?client_id=${SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=http:%2F%2Flocalhost:8080%2Fcallback&scope=${scope}`
+                `https://accounts.spotify.com/authorize?client_id=${process.env.SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=http:%2F%2Flocalhost:8080%2Fcallback&scope=${scope}`
               )
             }
           >
