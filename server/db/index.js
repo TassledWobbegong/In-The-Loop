@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const config = require('../config');
-const { DATABASE } = config;
+const { database} = config;
 
 mongoose
-  .connect(DATABASE, {
+  .connect(database, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     dbName: 'inTheLoop',
