@@ -8,8 +8,7 @@ const Map = () => {
   const [style, setStyle] = useState('mapbox://styles/mapbox/satellite-v9');
 
   useEffect(() => {
-    mapbox.accessToken =
-      'pk.eyJ1IjoiaWtqdWRkIiwiYSI6ImNrcWppMTM2ZTA5ODQybm9ieTE5M2J0YTAifQ._eHutyLjit-nTSOpnD-Vmg';
+    mapbox.accessToken = process.env.MAPBOXAPIKEY;
 
       
     const map = new mapbox.Map({
