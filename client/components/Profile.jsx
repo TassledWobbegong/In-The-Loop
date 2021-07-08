@@ -4,7 +4,8 @@ import FavoriteSong from './FavoriteSong';
 import FetchUserDetails from '../api/FetchUserDetails';
 
 const Profile = () => {
-  const { SPOTIFY_CLIENT_ID } = process.env
+  // example to use env variables in React App
+  console.log('SPOTIFY_CLIENT_ID ', process.env.SPOTIFY_CLIENT_ID)
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const scope =
